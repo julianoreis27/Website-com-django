@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internacional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home') }}">
+            <img src="static/imagens/scinternacional.svg" alt="Inter Clube do Povo">
+        </a>
+        <ul>
+            <li><a href="{{ url_for('elenco') }}">ELENCO</a></li>
+            <li><a href="{{ url_for('historia') }}">HISTÓRIA</a></li>
+            <li><a href="{{ url_for('titulos') }}">TÍTULOS</a></li>
+            <li><a href="{{ url_for('noticias') }}">NOTÍCIAS</a></li>
+            <li><a href="{{ url_for('associe_se') }}">ASSOCIE-SE</a></li>
+            <li><a href="{{ url_for('loja') }}">LOJA OFICIAL</a></li>
+            <li><a href="{{ url_for('fale_conosco') }}">FALE-CONOSCO</a></li>
+            {% if nome_usuario %}
+            <li class="dropdown">
+                <a href="{{ url_for('pagina_usuario') }}">Olá, {{ nome_usuario }}</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('pagina_usuario') }}">Minha Conta</a>
+                    <a href="{{ url_for('logout') }}">Sair</a>
+                </div>
+            </li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">FAÇA LOGIN</a></li>
+            <li><a href="{{ url_for('login_administrador') }}">LOGIN ADMINISTRADOR</a></li>
+            {% endif %}
+        </ul>
+    </header>
+
+    <main class="corpo_titulos">
+        <section class="titulos">
+            <h1>Títulos Internacionais</h1>
+
+            <article>
+                <h2>Copa Libertadores da América: 2 títulos</h2>
+                <ul><li>2006, 2010</li></ul>
+                <div class="bloco">
+                    <img src="static/imagens/inter_campeao_libertadores_2010.webp" alt="Libertadores" class="imagem-titulos">
+                    <p>Inter campeão da Libertadores 2006 e 2010, superando clubes como Nacional, LDU, Libertad, São Paulo e Chivas Guadalajara, conquistando o bicampeonato sul-americano.</p>
+                </div>
+            </article>
+
+            <article>
+                <h2>Mundial de Clubes da FIFA: 1 título</h2>
+                <ul><li>2006</li></ul>
+                <div class="bloco">
+                    <img src="static/imagens/mundial.jpg" alt="Mundial FIFA" class="imagem-titulos">
+                    <p>Em 2006, o Inter bateu o Al-Ahly na semi e o Barcelona por 1 a 0 na final, com gol histórico de Adriano Gabiru, conquistando o mundo.</p>
+                </div>
+            </article>
+
+            <article>
+                <h2>Copa Sul-Americana: 1 título</h2>
+                <ul><li>2008</li></ul>
+                <div class="bloco">
+                    <img src="static/imagens/sulameticana.webp" alt="Sul-Americana" class="imagem-titulos"> 
+                    <p>Em 2008, o Inter venceu Estudiantes e Goiás até garantir o título em final emocionante contra o próprio Estudiantes.</p>
+                </div>
+            </article>
+
+            <article>
+                <h2>Recopa Sul-Americana: 2 títulos</h2>
+                <ul><li>2007, 2011</li></ul>
+                <div class="bloco">
+                    <img src="static/imagens/recopa.jpg" alt="Recopa" class="imagem-titulos">
+                    <p>Títulos em 2007 e 2011 contra Pachuca e Independiente, confirmando a força do Colorado no continente.</p>
+                </div>
+            </article>
+
+            <article>
+                <h2>Copa Suruga Bank: 1 título</h2>
+                <ul><li>2009</li></ul>
+                <div class="bloco">
+                    <img src="static/imagens/suruga.jpg" alt="Suruga Bank" class="imagem-titulos">
+                    <p>Em 2009, o Inter venceu o Oita Trinita no Japão, adicionando mais um troféu internacional à galeria.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="titulos">
+            <h1>Títulos Nacionais</h1>
+
+            <article>
+                <h2>Campeonato Brasileiro (Série A): 3 títulos</h2>
+                <ul><li>1975, 1976, 1979 (invicto)</li></ul>
+                <div class="bloco">
+                    <img src="static/imagens/brasileiro.jpg" alt="Brasileiro" class="imagem-titulos">
+                    <p>O Inter foi campeão nacional três vezes, destacando-se o feito invicto de 1979, uma marca rara no futebol brasileiro.</p>
+                </div>
+            </article>
+
+            <article>
+                <h2>Copa do Brasil: 1 título</h2>
+                <ul><li>1992</li></ul>
+                <div class="bloco">
+                    <img src="static/imagens/copa do brasil.jpeg" alt="Copa do Brasil" class="imagem-titulos">
+                    <p>Em 1992, o Colorado superou adversários fortes e bateu o Fluminense na final, levantando sua única Copa do Brasil.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="titulos">
+            <h1>Títulos Estaduais</h1>
+
+            <article>
+                <h2>Campeonato Gaúcho: 46 títulos</h2>
+                <ul><li>1927, 1934... 2025</li></ul>
+                <div class="bloco">
+                    <img src="static/imagens/gauchao.jpg" alt="Gauchão" class="imagem-titulos">
+                    <p>O Inter ergueu o Gauchão 46 vezes, incluindo o título invicto de 2025, reafirmando sua supremacia no Rio Grande do Sul.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="titulos resumo">
+            <h1>Resumo Final</h1>
+            <ul>
+                <li>Títulos Internacionais: 7</li>
+                <li>Títulos Nacionais: 4</li>
+                <li>Títulos Estaduais: 46</li>
+                <li>Total: 62 títulos oficiais</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+               <a href="{{ url_for('home') }}"><img src="static/imagens/scinternacional.svg" alt="Internacional Logo"> </a>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Clube</h3>
+                <ul>
+                    <li><a href="{{ url_for('elenco') }}"">Elenco</a></li>
+                    <li><a href="{{ url_for('historia') }}">História</a></li>
+                    <li><a href="{{ url_for('titulos') }}">Títulos</a></li>
+                    <li><a href="{{ url_for('noticias') }}">Notícias</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="{{ url_for('fale_conosco') }}">Fale Conosco</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Ouvidoria</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Trabalhe Conosco</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Atendimento ao Sócio</a></li>
+                    <li><a href="https://wa.me/5551999999999" target="_blank">Fale conosco no WhatsApp</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="static/imagens/facebook.png" alt="Facebook"></a>
+                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="static/imagens/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="static/imagens/instagram.avif" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="static/imagens/youtube.svg" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sport Club Internacional. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

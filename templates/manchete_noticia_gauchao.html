@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internacional - Manchete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home') }}">
+            <img src="static/imagens/scinternacional.svg" alt="Inter Clube do Povo">
+        </a>
+        <ul>
+            <li><a href="{{ url_for('elenco') }}">ELENCO</a></li>
+            <li><a href="{{ url_for('historia') }}">HISTÓRIA</a></li>
+            <li><a href="{{ url_for('titulos') }}">TÍTULOS</a></li>
+            <li><a href="{{ url_for('noticias') }}">NOTÍCIAS</a></li>
+            <li><a href="{{ url_for('associe_se') }}">ASSOCIE-SE</a></li>
+            <li><a href="{{ url_for('loja') }}">LOJA OFICIAL</a></li>
+            <li><a href="{{ url_for('fale_conosco') }}">FALE-CONOSCO</a></li>
+            {% if nome_usuario %}
+            <li class="dropdown">
+                <a href="{{ url_for('pagina_usuario') }}">Olá, {{ nome_usuario }}</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('pagina_usuario') }}">Minha Conta</a>
+                    <a href="{{ url_for('logout') }}">Sair</a>
+                </div>
+            </li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">FAÇA LOGIN</a></li>
+            <li><a href="{{ url_for('login_administrador') }}">LOGIN ADMINISTRADOR</a></li>
+            {% endif %}
+        </ul>
+    </header>
+    <div class="corpo">
+        <h1 class="manchete-title">Internacional conquista o Campeonato Gaúcho 2025 e levanta seu 47º troféu estadual</h1>
+        <p class="manchete-subtitle">Colorado derrota o rival e vence o campeonato</p>
+        <img src="static/imagens/taça.jpg" alt="Jogadores do Inter comemorando gol" class="manchete-img">
+        <div class="manchete-text">
+            <p>O Sport Club Internacional sagrou-se campeão do Campeonato Gaúcho 2025 neste domingo, ao vencer o Grêmio por 2 a 1 no Estádio Beira-Rio, garantindo o seu 47º título estadual e reafirmando a hegemonia colorada no Rio Grande do Sul.</p>
+            <p>O estádio estava lotado, pulsando em vermelho e branco, com a torcida fazendo a diferença desde o apito inicial. Aos 15 minutos do primeiro tempo, Alan Patrick abriu o placar com um chute colocado no canto direito. Logo em seguida, Valencia ampliou após uma bela jogada coletiva.</p>
+            <p>Após o apito final, jogadores e comissão técnica comemoraram muito com a torcida, que lotou o Beira-Rio e fez uma verdadeira festa vermelha. O capitão Alan Patrick ergueu a taça sob aplausos e cânticos que ecoaram por todo o estádio.</p>
+            <p>Com o triunfo, o Internacional inicia a temporada embalado e cheio de confiança para as próximas competições, especialmente a disputa da fase final da Copa Libertadores e o Campeonato Brasileiro.
+
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+               <a href="{{ url_for('home') }}"><img src="static/imagens/scinternacional.svg" alt="Internacional Logo"> </a>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Clube</h3>
+                <ul>
+                    <li><a href="{{ url_for('elenco') }}"">Elenco</a></li>
+                    <li><a href="{{ url_for('historia') }}">História</a></li>
+                    <li><a href="{{ url_for('titulos') }}">Títulos</a></li>
+                    <li><a href="{{ url_for('noticias') }}">Notícias</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="{{ url_for('fale_conosco') }}">Fale Conosco</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Ouvidoria</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Trabalhe Conosco</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Atendimento ao Sócio</a></li>
+                    <li><a href="https://wa.me/5551999999999" target="_blank">Fale conosco no WhatsApp</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="static/imagens/facebook.png" alt="Facebook"></a>
+                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="static/imagens/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="static/imagens/instagram.avif" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="static/imagens/youtube.svg" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sport Club Internacional. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

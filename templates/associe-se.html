@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associe-se - Clube do Povo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home') }}">
+            <img src="static/imagens/scinternacional.svg" alt="Inter Clube do Povo">
+        </a>
+        <ul>
+            <li><a href="{{ url_for('elenco') }}">ELENCO</a></li>
+            <li><a href="{{ url_for('historia') }}">HISTÓRIA</a></li>
+            <li><a href="{{ url_for('titulos') }}">TÍTULOS</a></li>
+            <li><a href="{{ url_for('noticias') }}">NOTÍCIAS</a></li>
+            <li><a href="{{ url_for('associe_se') }}">ASSOCIE-SE</a></li>
+            <li><a href="{{ url_for('loja') }}">LOJA OFICIAL</a></li>
+            <li><a href="{{ url_for('fale_conosco') }}">FALE-CONOSCO</a></li>
+            {% if nome_usuario %}
+            <li class="dropdown">
+                <a href="{{ url_for('pagina_usuario') }}">Olá, {{ nome_usuario }}</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('pagina_usuario') }}">Minha Conta</a>
+                    <a href="{{ url_for('logout') }}">Sair</a>
+                </div>
+            </li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">FAÇA LOGIN</a></li>
+            <li><a href="{{ url_for('login_administrador') }}">LOGIN ADMINISTRADOR</a></li>
+            {% endif %}
+        </ul>
+    </header>
+
+    <main>
+        <section class="hero-associe-se">
+            <div class="container">
+                <h1>FAÇA PARTE DO CLUBE DO POVO!</h1>
+                <p>Escolha o plano que melhor combina com você e apoie o Colorado!</p>
+                <a href="#planos" class="btn-primary">CONHEÇA NOSSOS PLANOS</a>
+            </div>
+        </section>
+
+        <section id="planos" class="planos-overview">
+            <div class="container">
+                <h2>Seja um Sócio Colorada(o)</h2>
+                <div class="planos-grid-overview">
+                    <div class="plan-item">
+                        <img src="static/imagens/icon-campeao.png" alt="Ícone Campeão">
+                        <h3>Campeão do Mundo</h3>
+                        <p>Para quem vive o Beira-Rio!</p>
+                    </div>
+                    <div class="plan-item">
+                        <img src="static/imagens/icon-nvns.png" alt="Ícone Nada Vai Nos Separar">
+                        <h3>Nada Vai Nos Separar</h3>
+                        <p>Apoie o Inter de qualquer lugar!</p>
+                    </div>
+                    <div class="plan-item">
+                        <img src="static/imagens/icon-academia.png" alt="Ícone Academia do Povo">
+                        <h3>Academia do Povo</h3>
+                        <p>O Inter acessível para todos!</p>
+                    </div>
+                    <div class="plan-item">
+                        <img src="static/imagens/icon-coloradinho.png" alt="Ícone Coloradinho">
+                        <h3>Coloradinho</h3>
+                        <p>O futuro da nação colorada!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="planos-detalhes">
+            <div class="container">
+                <div class="plano-card">
+                    <img src="static/imagens/icon-campeao.png" alt="Sócio Campeão do Mundo">
+                    <div class="plano-info">
+                        <h3>Campeão do Mundo</h3>
+                        <p class="valor">R$ 68,00<span>/mês</span></p>
+                        <ul>
+                            <li>Prioridade na compra de ingressos.</li>
+                            <li>Valor de ingresso reduzido.</li>
+                            <li>Participação em sorteios e premiações.</li>
+                            <li>Isenção na Visita Colorada e Museu.</li>
+                            <li>Descontos exclusivos em parceiros.</li>
+                        </ul>
+                        <a href="#" class="btn-associe-se">ASSOCIE-SE AGORA</a>
+                    </div>
+                </div>
+
+                <div class="plano-card">
+                    <img src="static/imagens/icon-nvns.png" alt="Sócio Nada Vai Nos Separar">
+                    <div class="plano-info">
+                        <h3>Nada Vai Nos Separar</h3>
+                        <p class="valor">R$ 34,00<span>/mês</span></p>
+                        <ul>
+                            <li>Prioridade na compra de ingressos.</li>
+                            <li>Desconto de 50% em ingressos.</li>
+                            <li>Participação em sorteios e premiações.</li>
+                            <li>Descontos exclusivos em parceiros.</li>
+                            <li>Apoie o clube de onde estiver.</li>
+                        </ul>
+                        <a href="#" class="btn-associe-se">ASSOCIE-SE AGORA</a>
+                    </div>
+                </div>
+
+                <div class="plano-card">
+                    <img src="static/imagens/icon-academia.png" alt="Sócio Academia do Povo">
+                    <div class="plano-info">
+                        <h3>Academia do Povo</h3>
+                        <p class="valor">R$ 12,00<span>/mês</span></p>
+                        <ul>
+                            <li>Plano social para baixa renda/estudantes.</li>
+                            <li>Acesso garantido a jogos no Beira-Rio.</li>
+                            <li>Prioridade de compra em setores específicos.</li>
+                            <li>Participação em ações sociais do clube.</li>
+                            <li>Descontos em parceiros selecionados.</li>
+                        </ul>
+                        <a href="#" class="btn-associe-se">ASSOCIE-SE AGORA</a>
+                    </div>
+                </div>
+
+                <div class="plano-card">
+                    <img src="static/imagens/icon-coloradinho.png" alt="Sócio Coloradinho">
+                    <div class="plano-info">
+                        <h3>Coloradinho</h3>
+                        <p class="valor">R$ 9,00<span>/mês</span></p>
+                        <ul>
+                            <li>Para crianças até 12 anos.</li>
+                            <li>Kit Coloradinho de boas-vindas.</li>
+                            <li>Desconto em produtos infantis oficiais.</li>
+                            <li>Participação em eventos exclusivos para crianças.</li>
+                            <li>Futuro da paixão colorada!</li>
+                        </ul>
+                        <a href="#" class="btn-associe-se">ASSOCIE-SE AGORA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tabela-comparativa">
+            <div class="container">
+                <h2>Compare os Planos</h2>
+                <div class="tabela-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Benefícios</th>
+                                <th>Campeão do Mundo</th>
+                                <th>Nada Vai Nos Separar</th>
+                                <th>Academia do Povo</th>
+                                <th>Coloradinho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Prioridade Compra Ingresso</td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Valor Ingresso</td>
+                                <td>Reduzido</td>
+                                <td>50% OFF</td>
+                                <td>Acesso Garantido*</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Sorteios e Premiações</td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Isenção Visita/Museu</td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Direito a Voto</td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Descontos Parceiros</td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                                <td><span class="check-mark">&#10003;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Check-in / Cadeira Marcada</td>
+                                <td>Sim</td>
+                                <td>-</td>
+                                <td>Sim</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="tabela-nota">*Condições específicas para acesso ao Beira-Rio no plano Academia do Povo.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+               <a href="{{ url_for('home') }}"><img src="static/imagens/scinternacional.svg" alt="Internacional Logo"> </a>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Clube</h3>
+                <ul>
+                    <li><a href="{{ url_for('elenco') }}"">Elenco</a></li>
+                    <li><a href="{{ url_for('historia') }}">História</a></li>
+                    <li><a href="{{ url_for('titulos') }}">Títulos</a></li>
+                    <li><a href="{{ url_for('noticias') }}">Notícias</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="{{ url_for('fale_conosco') }}">Fale Conosco</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Ouvidoria</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Trabalhe Conosco</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Atendimento ao Sócio</a></li>
+                    <li><a href="https://wa.me/5551999999999" target="_blank">Fale conosco no WhatsApp</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="static/imagens/facebook.png" alt="Facebook"></a>
+                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="static/imagens/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="static/imagens/instagram.avif" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="static/imagens/youtube.svg" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sport Club Internacional. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

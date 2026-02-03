@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco - Internacional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home') }}">
+            <img src="static/imagens/scinternacional.svg" alt="Inter Clube do Povo">
+        </a>
+        <ul>
+            <li><a href="{{ url_for('elenco') }}">ELENCO</a></li>
+            <li><a href="{{ url_for('historia') }}">HISTÓRIA</a></li>
+            <li><a href="{{ url_for('titulos') }}">TÍTULOS</a></li>
+            <li><a href="{{ url_for('noticias') }}">NOTÍCIAS</a></li>
+            <li><a href="{{ url_for('associe_se') }}">ASSOCIE-SE</a></li>
+            <li><a href="{{ url_for('loja') }}">LOJA OFICIAL</a></li>
+            <li><a href="{{ url_for('fale_conosco') }}">FALE-CONOSCO</a></li>
+            {% if nome_usuario %}
+            <li class="dropdown">
+                <a href="{{ url_for('pagina_usuario') }}">Olá, {{ nome_usuario }}</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('pagina_usuario') }}">Minha Conta</a>
+                    <a href="{{ url_for('logout') }}">Sair</a>
+                </div>
+            </li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">FAÇA LOGIN</a></li>
+            <li><a href="{{ url_for('login_administrador') }}">LOGIN ADMINISTRADOR</a></li>
+            {% endif %}
+        </ul>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">Nosso Elenco Principal</h1>
+
+            <section class="posicao-grupo">
+                <h2>Goleiros</h2>
+                <div class="elenco-grid">
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/GOLEIROS/sergio_rochet.jpg" alt="Foto do jogador Sergio Rochet">
+                        <div class="player-info"><h3>Sergio Rochet</h3><p>Goleiro <span class="player-number">#1</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/GOLEIROS/ivan_quaresma.jpg" alt="Foto do jogador Ivan Quaresma">
+                        <div class="player-info"><h3>Ivan Quaresma</h3><p>Goleiro <span class="player-number">#12</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/GOLEIROS/kauan_jesus.jpg" alt="Foto do jogador Kauan Jesus">
+                        <div class="player-info"><h3>Kauan Jesus</h3><p>Goleiro <span class="player-number">#22</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/GOLEIROS/anthoni.jpg" alt="Foto do jogador Anthoni">
+                        <div class="player-info"><h3>Anthoni</h3><p>Goleiro <span class="player-number">#24</span></p></div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="posicao-grupo">
+                <h2>Defensores</h2>
+                <div class="elenco-grid">
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/LATERAIS/ramon.jpg" alt="Foto do jogador Ramon">
+                        <div class="player-info"><h3>Ramon</h3><p>Lateral <span class="player-number">#2</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ZAGUEIROS/agustin_rogel.jpg" alt="Foto do jogador Agustín Rogel">
+                        <div class="player-info"><h3>Agustín Rogel</h3><p>Zagueiro <span class="player-number">#3</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ZAGUEIROS/vitao.jpg" alt="Foto do jogador Vitão">
+                        <div class="player-info"><h3>Vitão</h3><p>Zagueiro <span class="player-number">#4</span></p></div>
+                    </a>
+                     <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/LATERAIS/bruno_gomes.jpg" alt="Foto do jogador Bruno Gomes">
+                        <div class="player-info"><h3>Bruno Gomes</h3><p>Lateral <span class="player-number">#15</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ZAGUEIROS/juninho.jpg" alt="Foto do jogador Juninho">
+                        <div class="player-info"><h3>Juninho</h3><p>Zagueiro <span class="player-number">#18</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ZAGUEIROS/clayton_sampaio.jpg" alt="Foto do jogador Clayton Sampaio">
+                        <div class="player-info"><h3>Clayton Sampaio</h3><p>Zagueiro <span class="player-number">#20</span></p></div>
+                    </a>
+                     <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/LATERAIS/nathan.jpg" alt="Foto do jogador Nathan">
+                        <div class="player-info"><h3>Nathan</h3><p>Lateral <span class="player-number">#23</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ZAGUEIROS/gabriel_mercado.jpg" alt="Foto do jogador Gabriel Mercado">
+                        <div class="player-info"><h3>Gabriel Mercado</h3><p>Zagueiro <span class="player-number">#25</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/LATERAIS/bernabei.jpg" alt="Foto do jogador Bernabei">
+                        <div class="player-info"><h3>Bernabei</h3><p>Lateral <span class="player-number">#26</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ZAGUEIROS/kaique_rocha.jpg" alt="Foto do jogador Kaíque Rocha">
+                        <div class="player-info"><h3>Kaíque Rocha</h3><p>Zagueiro <span class="player-number">#27</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/LATERAIS/braian_aguirre.jpg" alt="Foto do jogador Braian Aguirre">
+                        <div class="player-info"><h3>Braian Aguirre</h3><p>Lateral <span class="player-number">#35</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ZAGUEIROS/victor_gabriel.jpg" alt="Foto do jogador Victor Gabriel">
+                        <div class="player-info"><h3>Victor Gabriel</h3><p>Zagueiro <span class="player-number">#41</span></p></div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="posicao-grupo">
+                <h2>Meio-Campistas</h2>
+                <div class="elenco-grid">
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/fernando.jpg" alt="Foto do jogador Fernando">
+                        <div class="player-info"><h3>Fernando</h3><p>Meio-Campista <span class="player-number">#5</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/bruno_henrique.jpg" alt="Foto do jogador Bruno Henrique">
+                        <div class="player-info"><h3>Bruno Henrique</h3><p>Meio-Campista <span class="player-number">#8</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/alan_patrick.jpg" alt="Foto do jogador Alan Patrick">
+                        <div class="player-info"><h3>Alan Patrick</h3><p>Meio-Campista <span class="player-number">#10</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/oscar_romero.jpg" alt="Foto do jogador Oscar Romero">
+                        <div class="player-info"><h3>Oscar Romero</h3><p>Meio-Campista <span class="player-number">#11</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/ronaldo.jpg" alt="Foto do jogador Ronaldo">
+                        <div class="player-info"><h3>Ronaldo</h3><p>Meio-Campista <span class="player-number">#16</span></p></div>
+                    </a>
+                     <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/bruno_tabata.jpg" alt="Foto do jogador Bruno Tabata">
+                        <div class="player-info"><h3>Bruno Tabata</h3><p>Meio-Campista <span class="player-number">#17</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/thiago_maia.jpg" alt="Foto do jogador Thiago Maia">
+                        <div class="player-info"><h3>Thiago Maia</h3><p>Meio-Campista <span class="player-number">#29</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/diego_rosa.jpg" alt="Foto do jogador Diego Rosa">
+                        <div class="player-info"><h3>Diego Rosa</h3><p>Meio-Campista <span class="player-number">#33</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/gabriel_carvalho.jpg" alt="Foto do jogador Gabriel Carvalho">
+                        <div class="player-info"><h3>Gabriel Carvalho</h3><p>Meio-Campista <span class="player-number">#34</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/luis_otavio.jpg" alt="Foto do jogador Luis Otavio">
+                        <div class="player-info"><h3>Luis Otavio</h3><p>Meio-Campista <span class="player-number">#39</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/MEIO-CAMPISTAS/gustavo_prado.jpg" alt="Foto do jogador Gustavo Prado">
+                        <div class="player-info"><h3>Gustavo Prado</h3><p>Meio-Campista <span class="player-number">#47</span></p></div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="posicao-grupo">
+                <h2>Atacantes</h2>
+                <div class="elenco-grid">
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ATACANTES/johan_carbonero.jpg" alt="Foto do jogador Johan Carbonero">
+                        <div class="player-info"><h3>Johan Carbonero</h3><p>Atacante <span class="player-number">#7</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ATACANTES/enner_valencia.jpg" alt="Foto do jogador Enner Valencia">
+                        <div class="player-info"><h3>Enner Valencia</h3><p>Atacante <span class="player-number">#13</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ATACANTES/rafael_borre.jpg" alt="Foto do jogador Rafael Borré">
+                        <div class="player-info"><h3>Rafael Borré</h3><p>Atacante <span class="player-number">#19</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ATACANTES/wesley.jpg" alt="Foto do jogador Wesley">
+                        <div class="player-info"><h3>Wesley</h3><p>Atacante <span class="player-number">#21</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ATACANTES/vitinho.jpg" alt="Foto do jogador Vitinho">
+                        <div class="player-info"><h3>Vitinho</h3><p>Atacante <span class="player-number">#28</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ATACANTES/ricardo_mathias.jpg" alt="Foto do jogador Vitinho">
+                        <div class="player-info"><h3>Ricardo Mathias</h3><p>Atacante <span class="player-number">#49</span></p></div>
+                    </a>
+                    <a href="#" target="_blank" class="player-card">
+                        <img src="static/imagens-elenco/ATACANTES/lucca_holanda.jpg" alt="Foto do jogador Vitinho">
+                        <div class="player-info"><h3>Lucca Holanda</h3><p>Atacante <span class="player-number">#45</span></p></div>
+                    </a>
+                    </div>
+                    </section>
+                    </div>
+                    </main>
+                    <footer>
+                        <div class="footer-container">
+                            <div class="footer-logo">
+                               <a href="{{ url_for('home') }}"><img src="static/imagens/scinternacional.svg" alt="Internacional Logo"> </a>
+                            </div>
+                    
+                            <div class="footer-links">
+                                <h3>Clube</h3>
+                                <ul>
+                                    <li><a href="{{ url_for('elenco') }}"">Elenco</a></li>
+                                    <li><a href="{{ url_for('historia') }}">História</a></li>
+                                    <li><a href="{{ url_for('titulos') }}">Títulos</a></li>
+                                    <li><a href="{{ url_for('noticias') }}">Notícias</a></li>
+                                </ul>
+                            </div>
+                    
+                            <div class="footer-links">
+                                <h3>Contato</h3>
+                                <ul>
+                                    <li><a href="{{ url_for('fale_conosco') }}">Fale Conosco</a></li>
+                                    <li><a href="{{ url_for('fale_conosco') }}">Ouvidoria</a></li>
+                                    <li><a href="{{ url_for('fale_conosco') }}">Trabalhe Conosco</a></li>
+                                    <li><a href="{{ url_for('fale_conosco') }}">Atendimento ao Sócio</a></li>
+                                    <li><a href="https://wa.me/5551999999999" target="_blank">Fale conosco no WhatsApp</a></li>
+                                </ul>
+                            </div>
+                    
+                            <div class="footer-social">
+                                <h3>Siga-nos</h3>
+                                <div class="social-icons">
+                                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="static/imagens/facebook.png" alt="Facebook"></a>
+                                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="static/imagens/twitter.png" alt="Twitter"></a>
+                                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="static/imagens/instagram.avif" alt="Instagram"></a>
+                                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="static/imagens/youtube.svg" alt="YouTube"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="footer-copy">&copy; 2025 Sport Club Internacional. Todos os direitos reservados.</p>
+                    </footer>
+                </body>
+                </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco - Internacional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home') }}">
+            <img src="static/imagens/scinternacional.svg" alt="Inter Clube do Povo">
+        </a>
+        <ul>
+            <li><a href="{{ url_for('elenco') }}">ELENCO</a></li>
+            <li><a href="{{ url_for('historia') }}">HISTÓRIA</a></li>
+            <li><a href="{{ url_for('titulos') }}">TÍTULOS</a></li>
+            <li><a href="{{ url_for('noticias') }}">NOTÍCIAS</a></li>
+            <li><a href="{{ url_for('associe_se') }}">ASSOCIE-SE</a></li>
+            <li><a href="{{ url_for('loja') }}">LOJA OFICIAL</a></li>
+            <li><a href="{{ url_for('fale_conosco') }}">FALE-CONOSCO</a></li>
+            {% if nome_usuario %}
+            <li class="dropdown">
+                <a href="{{ url_for('pagina_usuario') }}">Olá, {{ nome_usuario }}</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('pagina_usuario') }}">Minha Conta</a>
+                    <a href="{{ url_for('logout') }}">Sair</a>
+                </div>
+            </li>
+            {% else %}
+            <li><a href="{{ url_for('login') }}">FAÇA LOGIN</a></li>
+            <li><a href="{{ url_for('login_administrador') }}">LOGIN ADMINISTRADOR</a></li>
+            {% endif %}
+        </ul>
+    </header>
+
+    <div class="container-form">
+        <h1>Fale Conosco</h1>
+        <form>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Enviar Mensagem</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+               <a href="{{ url_for('home') }}"><img src="static/imagens/scinternacional.svg" alt="Internacional Logo"> </a>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Clube</h3>
+                <ul>
+                    <li><a href="{{ url_for('elenco') }}"">Elenco</a></li>
+                    <li><a href="{{ url_for('historia') }}">História</a></li>
+                    <li><a href="{{ url_for('titulos') }}">Títulos</a></li>
+                    <li><a href="{{ url_for('noticias') }}">Notícias</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="{{ url_for('fale_conosco') }}">Fale Conosco</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Ouvidoria</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Trabalhe Conosco</a></li>
+                    <li><a href="{{ url_for('fale_conosco') }}">Atendimento ao Sócio</a></li>
+                    <li><a href="https://wa.me/5551999999999" target="_blank">Fale conosco no WhatsApp</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="static/imagens/facebook.png" alt="Facebook"></a>
+                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="static/imagens/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="static/imagens/instagram.avif" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="static/imagens/youtube.svg" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sport Club Internacional. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
