@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 <body>
     <header>
         <a href="{{ url_for('home') }}">
-            <img src="static/imagens/scinternacional.svg" alt="Inter Clube do Povo">
+            <img src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Inter Clube do Povo">
         </a>
         <ul>
             <li><a href="{{ url_for('elenco') }}">ELENCO</a></li>
@@ -37,27 +37,27 @@
 
     <div class="loja-container">
         <div class="produto">
-            <img src="static/imagens/camisa_oficial.jpg" alt="Camisa Oficial 1">
+            <img src="{{ url_for('static', filename='imagens/camisa_oficial.jpg') }}" alt="Camisa Oficial 1">
             <h3>Camisa Oficial 2025</h3>
             <a><button>Comprar</button></a>
         </div>
         <div class="produto">
-            <img src="static/imagens/camisa_inter_treino.webp" alt="Camisa Oficial 2">
+            <img src="{{ url_for('static', filename='imagens/camisa_inter_treino.webp') }}" alt="Camisa Oficial 2">
             <h3>Camisa Treino 2025</h3>
             <button>Comprar</button>
         </div>
         <div class="produto">
-            <img src="static/imagens/bone inter.webp" alt="Boné Inter">
+            <img src="{{ url_for('static', filename='imagens/bone inter.webp') }}" alt="Boné Inter">
             <h3>Boné do Colorado</h3>
             <button>Comprar</button>
         </div>
         <div class="produto">
-            <img src="static/imagens/cachecol inter.webp" alt="Cachecol Inter">
+            <img src="{{ url_for('static', filename='imagens/cachecol inter.webp') }}" alt="Cachecol Inter">
             <h3>Cachecol Colorado</h3>
             <button>Comprar</button>
         </div>
         <div class="produto">
-            <img src="static/imagens/mochila inter.avif" alt="Mochila Inter">
+            <img src="{{ url_for('static', filename='imagens/mochila inter.avif') }}" alt="Mochila Inter">
             <h3>Mochila Oficial</h3>
             <button>Comprar</button>
         </div>
@@ -66,7 +66,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-               <a href="{{ url_for('home') }}"><img src="static/imagens/scinternacional.svg" alt="Internacional Logo"> </a>
+               <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Internacional Logo"> </a>
             </div>
     
             <div class="footer-links">
@@ -93,10 +93,10 @@
             <div class="footer-social">
                 <h3>Siga-nos</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="static/imagens/facebook.png" alt="Facebook"></a>
-                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="static/imagens/twitter.png" alt="Twitter"></a>
-                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="static/imagens/instagram.avif" alt="Instagram"></a>
-                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="static/imagens/youtube.svg" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="{{ url_for('static', filename='imagens/facebook.png') }}" alt="Facebook"></a>
+                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="{{ url_for('static', filename='imagens/twitter.png') }}" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="{{ url_for('static', filename='imagens/instagram.avif') }}" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="{{ url_for('static', filename='imagens/youtube.svg') }}" alt="YouTube"></a>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 <body>
     <header>
         <a href="{{ url_for('home') }}">
-            <img src="static/imagens/scinternacional.svg" alt="Inter Clube do Povo">
+            <img src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Inter Clube do Povo">
         </a>
         <ul>
             <li><a href="{{ url_for('elenco') }}">ELENCO</a></li>
@@ -51,22 +51,22 @@
                 <h2>Seja um Sócio Colorada(o)</h2>
                 <div class="planos-grid-overview">
                     <div class="plan-item">
-                        <img src="static/imagens/icon-campeao.png" alt="Ícone Campeão">
+                        <img src="{{ url_for('static', filename='imagens/icon-campeao.png') }}" alt="Ícone Campeão">
                         <h3>Campeão do Mundo</h3>
                         <p>Para quem vive o Beira-Rio!</p>
                     </div>
                     <div class="plan-item">
-                        <img src="static/imagens/icon-nvns.png" alt="Ícone Nada Vai Nos Separar">
+                        <img src="{{ url_for('static', filename='imagens/icon-nvns.png') }}" alt="Ícone Nada Vai Nos Separar">
                         <h3>Nada Vai Nos Separar</h3>
                         <p>Apoie o Inter de qualquer lugar!</p>
                     </div>
                     <div class="plan-item">
-                        <img src="static/imagens/icon-academia.png" alt="Ícone Academia do Povo">
+                        <img src="{{ url_for('static', filename='imagens/icon-academia.png') }}" alt="Ícone Academia do Povo">
                         <h3>Academia do Povo</h3>
                         <p>O Inter acessível para todos!</p>
                     </div>
                     <div class="plan-item">
-                        <img src="static/imagens/icon-coloradinho.png" alt="Ícone Coloradinho">
+                        <img src="{{ url_for('static', filename='imagens/icon-coloradinho.png') }}" alt="Ícone Coloradinho">
                         <h3>Coloradinho</h3>
                         <p>O futuro da nação colorada!</p>
                     </div>
@@ -77,7 +77,7 @@
         <section class="planos-detalhes">
             <div class="container">
                 <div class="plano-card">
-                    <img src="static/imagens/icon-campeao.png" alt="Sócio Campeão do Mundo">
+                    <img src="{{ url_for('static', filename='imagens/icon-campeao.png') }}" alt="Sócio Campeão do Mundo">
                     <div class="plano-info">
                         <h3>Campeão do Mundo</h3>
                         <p class="valor">R$ 68,00<span>/mês</span></p>
@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="plano-card">
-                    <img src="static/imagens/icon-nvns.png" alt="Sócio Nada Vai Nos Separar">
+                    <img src="{{ url_for('static', filename='imagens/icon-nvns.png') }}" alt="Sócio Nada Vai Nos Separar">
                     <div class="plano-info">
                         <h3>Nada Vai Nos Separar</h3>
                         <p class="valor">R$ 34,00<span>/mês</span></p>
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="plano-card">
-                    <img src="static/imagens/icon-academia.png" alt="Sócio Academia do Povo">
+                    <img src="{{ url_for('static', filename='imagens/icon-academia.png') }}" alt="Sócio Academia do Povo">
                     <div class="plano-info">
                         <h3>Academia do Povo</h3>
                         <p class="valor">R$ 12,00<span>/mês</span></p>
@@ -125,7 +125,7 @@
                 </div>
 
                 <div class="plano-card">
-                    <img src="static/imagens/icon-coloradinho.png" alt="Sócio Coloradinho">
+                    <img src="{{ url_for('static', filename='imagens/icon-coloradinho.png') }}" alt="Sócio Coloradinho">
                     <div class="plano-info">
                         <h3>Coloradinho</h3>
                         <p class="valor">R$ 9,00<span>/mês</span></p>
@@ -217,7 +217,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-               <a href="{{ url_for('home') }}"><img src="static/imagens/scinternacional.svg" alt="Internacional Logo"> </a>
+               <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Internacional Logo"> </a>
             </div>
     
             <div class="footer-links">
@@ -244,10 +244,10 @@
             <div class="footer-social">
                 <h3>Siga-nos</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="static/imagens/facebook.png" alt="Facebook"></a>
-                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="static/imagens/twitter.png" alt="Twitter"></a>
-                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="static/imagens/instagram.avif" alt="Instagram"></a>
-                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="static/imagens/youtube.svg" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="{{ url_for('static', filename='imagens/facebook.png') }}" alt="Facebook"></a>
+                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="{{ url_for('static', filename='imagens/twitter.png') }}" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="{{ url_for('static', filename='imagens/instagram.avif') }}" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="{{ url_for('static', filename='imagens/youtube.svg') }}" alt="YouTube"></a>
                 </div>
             </div>
         </div>
