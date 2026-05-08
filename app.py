@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #Imports
-app = Flask(__name__, static_folder='static', static_url_path='/static', template_folder='templates')
+app = Flask(__name__)
 
 
 
