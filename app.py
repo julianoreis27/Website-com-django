@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 noticias_publica =  [   {
         "titulo": "Internacional contrata lateral direito Alan Benitez",
-        "imagem": "imagens/alan benitez.webp",
+        "imagem": "imagens/alan_benitez.webp",
         "endpoint": "noticia_contratacao"
     },
     {
@@ -24,7 +24,7 @@ noticias_publica =  [   {
     },
     {
        "titulo": "Elenco colorado conquista seu 46º título do campeonato estadual ... ",
-        "imagem": "imagens/taça.jpg",
+        "imagem": "imagens/taca.jpg",
         "endpoint": "noticia_gauchao"  
         }
     ]
