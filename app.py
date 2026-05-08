@@ -8,45 +8,40 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #Imports
-# Obtém o diretório do app.py
-basedir = os.path.abspath(os.path.dirname(__file__))
-app = Flask(__name__, 
-            static_folder=os.path.join(basedir, 'static'),
-            static_url_path='/static',
-            template_folder=os.path.join(basedir, 'templates'))
+app = Flask(__name__)
 
 
 
 noticias_publica =  [   {
         "titulo": "Internacional contrata lateral direito Alan Benitez",
-        "imagem": "static/imagens/alan benitez.webp",
+        "imagem": "imagens/alan benitez.webp",
         "endpoint": "noticia_contratacao"
     },
     {
         "titulo": "Internacional vence Bahia de 2x1 e garante sua classificação para o mata-mata da libertadores ...",
-        "imagem": "static/imagens/bernabei.jpg",
+        "imagem": "imagens/bernabei.jpg",
         "endpoint": "noticia_libertadores"
     },
     {
        "titulo": "Elenco colorado conquista seu 46º título do campeonato estadual ... ",
-        "imagem": "static/imagens/taça.jpg",
+        "imagem": "imagens/taça.jpg",
         "endpoint": "noticia_gauchao"  
         }
     ]
 
 noticias_logado = [{
         "titulo": "Internacional sofre derrota de 2x1 no Beira Rio para o Fluminense...",
-        "imagem": "static/imagens/fluminense.jpg",
+        "imagem": "imagens/fluminense.jpg",
         "endpoint": "noticia_gauchao"},
 {
        "titulo": "Internacional contrata meio-campo uruguaio Alan Rodríguez...",
-        "imagem": "static/imagens/alan_rodriguez.webp",
+        "imagem": "imagens/alan_rodriguez.webp",
         "endpoint": "noticia_gauchao"
 }, 
      
 {
        "titulo": "Repercurção no vestiário colorado que envolve 4 jogadores e filha de empresário... ",
-        "imagem": "static/imagens/amarok.jpg",
+        "imagem": "imagens/amarok.jpg",
         "endpoint": "noticia_gauchao"
 }
 ]

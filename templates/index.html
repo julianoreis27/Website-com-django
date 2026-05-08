@@ -76,7 +76,7 @@
         {% for noticia in noticias %}
         <div class="noticia">
             <a href="{{ url_for(noticia.endpoint) }}">
-                <img src="{{ noticia.imagem }}" alt="Imagem da notícia">
+                <img src="{{ url_for('static', filename=noticia.imagem) }}" alt="Imagem da notícia">
                 <p>{{ noticia.titulo }}</p>
             </a>
         </div>
