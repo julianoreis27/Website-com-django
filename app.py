@@ -8,7 +8,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #Imports
-app = Flask(__name__)
+# Obtém o diretório do app.py
+basedir = os.path.abspath(os.path.dirname(__file__))
+app = Flask(__name__, 
+            static_folder=os.path.join(basedir, 'static'),
+            static_url_path='/static',
+            template_folder=os.path.join(basedir, 'templates'))
 
 
 
