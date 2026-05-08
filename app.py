@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from flask import Flask, render_template, session, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, session, request, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 
@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #Imports
-app = Flask(__name__, static_folder='static', static_url_path='/static')
+app = Flask(__name__)
 
 
 
@@ -45,10 +45,6 @@ noticias_logado = [{
         "endpoint": "noticia_gauchao"
 }
 ]
-
-@app.route('/static/<path:filename>')
-def serve_static(filename):
-    return send_from_directory(app.static_folder, filename)
 
 @app.route('/')
 def home():
