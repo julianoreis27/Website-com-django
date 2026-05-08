@@ -1,5 +1,12 @@
 import sqlite3
+import os
 from flask import Flask, render_template, session, request, redirect, url_for
+from werkzeug.security import generate_password_hash, check_password_hash
+from dotenv import load_dotenv
+
+# Carrega variáveis de ambiente do arquivo .env
+load_dotenv()
+
 #Imports
 app = Flask(__name__)
 
@@ -149,10 +156,11 @@ def login():
             if resultado is None:
                 erro = 'Usuário não encontrado.'
             else:
-                senha_correta = (resultado[0] == senha)
-                if senha_correta:
+                senha_hash, nome = resultado
+                # Verifica se a senha corresponde ao hash (ou se é texto puro para legado)
+                if check_password_hash(senha_hash, senha) or senha_hash == senha:
                     session['usuario'] = usuario
-                    session['nome'] = resultado[1]
+                    session['nome'] = nome
                     return redirect(url_for('home'))
                 else:
                     erro = 'Senha incorreta.'
@@ -160,31 +168,7 @@ def login():
     return render_template('login.html', erro=erro)
 
 
-###########################################
-@app.post('/login')
-def validar_login():
-    usuario = request.form['usuario']
-    senha = request.form['senha']
-    nome = buscar_nome_usuario(usuario, senha)
-
-    with sqlite3.connect('usuarios.db') as conn:
-        cursor = conn.cursor()
-        if nome:
-            session['nome'] = nome
-            session['usuario'] = usuario
-            return render_template("ola.html", nome=nome)
-        cursor.execute("SELECT 1 FROM usuarios WHERE usuario = ?", (usuario,))
-        if cursor.fetchone():
-            return render_template("login.html", erro)
-
-#FUNÇÃO PARA BUSCAR O NOME DO USUÁRIO:
-def buscar_nome_usuario(usuario, senha):
-    with sqlite3.connect("usuarios.db") as conn:
-        cursor = conn.cursor()
-        sql = "SELECT nome FROM usuarios WHERE usuario = ? AND senha_hash = ?"
-        cursor.execute(sql, (usuario, senha))
-        resultado = cursor.fetchone()
-        return resultado[0] if resultado else None
+# A rota duplicada foi removida e consolidada acima
 
 
 
@@ -228,12 +212,15 @@ def criar_cadastro():
                                    erro="CPF já cadastrado.",
                                    usuario=usuario, nome=nome, email=email, cpf=cpf)
 
+        # Gera hash da senha antes de salvar
+        senha_criptografada = generate_password_hash(senha)
+
         # Aqui define o nível fixo como 0 (usuário comum)
         sql = '''
         INSERT INTO usuarios (nivel, usuario, nome, email, cpf, senha_hash)
         VALUES (?, ?, ?, ?, ?, ?)
         '''
-        cursor.execute(sql, (0, usuario, nome, email, cpf, senha))  # <- nível 0 aqui
+        cursor.execute(sql, (0, usuario, nome, email, cpf, senha_criptografada))  # <- nível 0 aqui
         conn.commit()
 
     return redirect(url_for('login'))
@@ -244,7 +231,7 @@ def criar_cadastro():
 def inject_user():
     nome = session.get('nome')
     return dict(nome_usuario=nome)
-app.secret_key = '1234'
+app.secret_key = os.environ.get('SECRET_KEY', 'chave-padrao-super-secreta-1234')
 
 @app.route('/logout')
 def logout():
