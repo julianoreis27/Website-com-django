@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "public": "static",
+  "public": true,
   "builds": [
     {
       "src": "api/index.py",
