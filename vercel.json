@@ -2,21 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "wsgi.py",
+      "src": "app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1",
-      "headers": {
-        "cache-control": "public, max-age=3600"
-      }
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "wsgi.py"
+      "dest": "app.py"
     }
   ]
 }

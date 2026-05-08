@@ -12,7 +12,6 @@ env/
 *.egg-info/
 dist/
 build/
-node_modules/
 .pytest_cache/
 .coverage
 .DS_Store
