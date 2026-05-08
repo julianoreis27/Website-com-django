@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "public": "static",
   "builds": [
     {
       "src": "app.py",
