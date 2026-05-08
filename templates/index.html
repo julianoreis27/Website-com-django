@@ -11,7 +11,12 @@
         <a href="{{ url_for('home') }}">
             <img src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Inter Clube do Povo">
         </a>
-        <ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul id="navMenu">
             <li><a href="{{ url_for('elenco') }}">ELENCO</a></li>
             <li><a href="{{ url_for('historia') }}">HISTÓRIA</a></li>
             <li><a href="{{ url_for('titulos') }}">TÍTULOS</a></li>
@@ -33,7 +38,41 @@
             {% endif %}
         </ul>
     </header>
+
+    <section class="hero-carousel hero-index" id="heroCarousel">
+        <div class="carousel-slide active">
+            <img src="{{ url_for('static', filename='imagens/reforma beira rio.jpg') }}" alt="Estádio Beira-Rio">
+        </div>
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename='imagens/gauchao.jpg') }}" alt="Comemoração Gauchão">
+        </div>
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename='imagens/inter 2025.jpg') }}" alt="Elenco Inter 2025">
+        </div>
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename='imagens/mundial.jpg') }}" alt="Mundial Inter">
+        </div>
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename='imagens/treino aberto.webp') }}" alt="Treino Aberto">
+        </div>
+        <div class="carousel-overlay"></div>
+        <div class="hero-index-content">
+            <h1>Colorado Paixão</h1>
+            <p>A história de um clube de tradição e glórias.</p>
+        </div>
+        <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
+        <div class="carousel-dots">
+            <button class="active" data-slide="0" aria-label="Slide 1"></button>
+            <button data-slide="1" aria-label="Slide 2"></button>
+            <button data-slide="2" aria-label="Slide 3"></button>
+            <button data-slide="3" aria-label="Slide 4"></button>
+            <button data-slide="4" aria-label="Slide 5"></button>
+        </div>
+    </section>
+
     <div class="corpo">
+        <div class="noticias-home">
         {% for noticia in noticias %}
         <div class="noticia">
             <a href="{{ url_for(noticia.endpoint) }}">
@@ -42,6 +81,7 @@
             </a>
         </div>
         {% endfor %}
+        </div>
         <div class="h1">
             <h1>PRÓXIMAS PARTIDAS: </h1>
         </div>
@@ -109,5 +149,48 @@
         </div>
         <p class="footer-copy">&copy; 2025 Sport Club Internacional. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('open');
+            });
+        }
+
+        (function() {
+            const carousel = document.getElementById('heroCarousel');
+            if (!carousel) return;
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dots = carousel.querySelectorAll('.carousel-dots button');
+            const prevBtn = carousel.querySelector('.carousel-btn.prev');
+            const nextBtn = carousel.querySelector('.carousel-btn.next');
+            let current = 0;
+            let timer = null;
+
+            function showSlide(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function next() { showSlide(current + 1); }
+            function prev() { showSlide(current - 1); }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetTimer(); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetTimer(); });
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => { showSlide(i); resetTimer(); });
+            });
+
+            function startTimer() { timer = setInterval(next, 5000); }
+            function resetTimer() { clearInterval(timer); startTimer(); }
+            startTimer();
+        })();
+    </script>
 </body>
 </html>
