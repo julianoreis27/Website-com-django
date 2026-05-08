@@ -1,13 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>História - Internacional</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internacional x Ceará - Match Center</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='imagens/scinternacional.svg') }}" type="image/svg+xml">
-
-    
 </head>
 <body>
     <header>
@@ -22,105 +20,81 @@
             <li><a href="{{ url_for('associe_se') }}">ASSOCIE-SE</a></li>
             <li><a href="{{ url_for('loja') }}">LOJA OFICIAL</a></li>
             <li><a href="{{ url_for('fale_conosco') }}">FALE-CONOSCO</a></li>
-            {% if nome_usuario %}
-            <li class="dropdown">
-                <a href="{{ url_for('pagina_usuario') }}">Olá, {{ nome_usuario }}</a>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('pagina_usuario') }}">Minha Conta</a>
-                    <a href="{{ url_for('logout') }}">Sair</a>
-                </div>
-            </li>
-            {% else %}
-            <li><a href="{{ url_for('login') }}">FAÇA LOGIN</a></li>
-            <li><a href="{{ url_for('login_administrador') }}">LOGIN ADMINISTRADOR</a></li>
-            {% endif %}
         </ul>
     </header>
-    <div class="corpo-partidas">
 
-        <img src="{{ url_for('static', filename='imagens partidas/ceara.webp') }}" alt="inter x ceara">
-        <h1>
-            Informações da Partida:
-        </h1>
-        <h2>Beira-Rio</h2>
-        <p>20/07/2025, 11:00</p>
+    <section class="hero-page" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(191,30,46,0.6)), url('{{ url_for('static', filename='imagens/reforma_beira_rio.jpg') }}'); background-attachment: fixed;">
+        <div class="hero-content">
+            <span class="era-badge" style="background: var(--gold); color: var(--gray-900);">Brasileirão 2025 • Rodada 18</span>
+            <h1>Internacional <span style="color: var(--gold);">x</span> Ceará</h1>
+            <p>Acompanhe todos os detalhes do confronto no Gigante da Beira-Rio</p>
+        </div>
+    </section>
 
-        <h1>Prováveis Times:</h1>
-
-
-    <div class="card-times" >
-
-        <div class="times">
-            <h2 class="nome-time">Internacional</h2>
-            <img src="{{ url_for('static', filename='imagens partidas/inter elenco x vitoria.png') }}">
+    <main class="corpo-historia">
+        <!-- MATCH CENTER HEADER -->
+        <div class="match-center-header" style="display: flex; justify-content: space-around; align-items: center; padding: 40px 0; background: var(--gray-100); border-radius: 20px; margin-bottom: 40px; box-shadow: var(--shadow-sm);">
+            <div class="team-info" style="text-align: center;">
+                <img src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Inter" style="width: 120px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                <h2 style="margin-top: 15px; color: var(--red);">INTERNACIONAL</h2>
+            </div>
+            <div class="vs" style="text-align: center;">
+                <h1 style="font-size: 4rem; color: var(--gray-400); margin: 0; border: none;">VS</h1>
+            </div>
+            <div class="team-info" style="text-align: center;">
+                <img src="{{ url_for('static', filename='imagens partidas/ceara.webp') }}" alt="Ceará" style="width: 120px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                <h2 style="margin-top: 15px; color: var(--gray-800);">CEARÁ</h2>
+            </div>
         </div>
 
-        <div class="x">
-            <h1>
-                X
-            </h1>
-
+        <!-- INFO GRID -->
+        <div class="info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 50px;">
+            <div class="info-card" style="background: var(--white); padding: 25px; border-radius: 15px; border-left: 5px solid var(--red); box-shadow: var(--shadow-sm);">
+                <h3 style="color: var(--red); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">Local da Partida</h3>
+                <p style="font-size: 1.2rem; font-weight: 700; color: var(--gray-900);">Estádio Beira-Rio</p>
+                <p style="color: var(--gray-600);">Porto Alegre, RS</p>
+            </div>
+            <div class="info-card" style="background: var(--white); padding: 25px; border-radius: 15px; border-left: 5px solid var(--gold); box-shadow: var(--shadow-sm);">
+                <h3 style="color: var(--gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">Data e Horário</h3>
+                <p style="font-size: 1.2rem; font-weight: 700; color: var(--gray-900);">20 de Julho, 2025</p>
+                <p style="color: var(--gray-600);">Domingo às 11:00</p>
+            </div>
         </div>
 
-        <div class="times">
-            <h2 class="nome-time">Ceará</h2>
-            <img src="{{ url_for('static', filename='imagens partidas/elenco ceara.png') }}">
+        <!-- PROVÁVEIS ESCALAÇÕES -->
+        <h2 style="text-align: center; margin-bottom: 30px; font-weight: 900; color: var(--red);">PROVÁVEIS TIMES</h2>
+        <div class="lineups" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px;">
+            <div class="lineup-card">
+                <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.1rem; color: var(--red);">Internacional</h3>
+                <img src="{{ url_for('static', filename='imagens partidas/inter elenco x vitoria.png') }}" alt="Escalação Inter" class="img-historia" style="margin: 0;">
+            </div>
+            <div class="lineup-card">
+                <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.1rem; color: var(--gray-700);">Ceará</h3>
+                <img src="{{ url_for('static', filename='imagens partidas/elenco ceara.png') }}" alt="Escalação Ceará" class="img-historia" style="margin: 0;">
+            </div>
         </div>
 
-    </div>
-        
-        
-
-        <div class="tabela">
-            <h2>Tabela Brasileirão Atualmente: </h2>
-            <img src="{{ url_for('static', filename='imagens partidas/tabela brasileirao.png') }}" alt="tabela Brasileirão">
-
+        <!-- TABELA -->
+        <div class="tabela-section" style="background: var(--gray-900); padding: 40px; border-radius: 20px; color: var(--white);">
+            <h2 style="color: var(--gold); margin-bottom: 25px; text-align: center;">Classificação Atual</h2>
+            <img src="{{ url_for('static', filename='imagens partidas/tabela brasileirao.png') }}" alt="Tabela" class="img-historia" style="max-width: 800px; opacity: 0.95;">
+            <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">*Dados atualizados conforme a última rodada do campeonato.</p>
         </div>
-        
-
-
-
-
-
-
-    </div>
-    
+    </main>
 
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
                <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Internacional Logo"> </a>
             </div>
-    
             <div class="footer-links">
                 <h3>Clube</h3>
                 <ul>
-                    <li><a href="{{ url_for('elenco') }}"">Elenco</a></li>
+                    <li><a href="{{ url_for('elenco') }}">Elenco</a></li>
                     <li><a href="{{ url_for('historia') }}">História</a></li>
                     <li><a href="{{ url_for('titulos') }}">Títulos</a></li>
                     <li><a href="{{ url_for('noticias') }}">Notícias</a></li>
                 </ul>
-            </div>
-    
-            <div class="footer-links">
-                <h3>Contato</h3>
-                <ul>
-                    <li><a href="{{ url_for('fale_conosco') }}">Fale Conosco</a></li>
-                    <li><a href="{{ url_for('fale_conosco') }}">Ouvidoria</a></li>
-                    <li><a href="{{ url_for('fale_conosco') }}">Trabalhe Conosco</a></li>
-                    <li><a href="{{ url_for('fale_conosco') }}">Atendimento ao Sócio</a></li>
-                    <li><a href="https://wa.me/5551999999999" target="_blank">Fale conosco no WhatsApp</a></li>
-                </ul>
-            </div>
-    
-            <div class="footer-social">
-                <h3>Siga-nos</h3>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="{{ url_for('static', filename='imagens/facebook.png') }}" alt="Facebook"></a>
-                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="{{ url_for('static', filename='imagens/twitter.png') }}" alt="Twitter"></a>
-                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="{{ url_for('static', filename='imagens/instagram.avif') }}" alt="Instagram"></a>
-                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="{{ url_for('static', filename='imagens/youtube.svg') }}" alt="YouTube"></a>
-                </div>
             </div>
         </div>
         <p class="footer-copy">&copy; 2025 Sport Club Internacional. Todos os direitos reservados.</p>
