@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="icon" href="{{ url_for('static', filename='imagens/scinternacional.svg') }}" type="image/svg+xml">
 
 </head>
+
 <body>
     <header>
         <a href="{{ url_for('home') }}">
@@ -59,8 +61,8 @@
         </div>
         <div class="carousel-overlay"></div>
         <div class="hero-index-content">
-            <h1>Colorado Paixão</h1>
-            <p>A história de um clube de tradição e glórias.</p>
+            <h1>Sport Club Internacional</h1>
+            <p>Paixão que une milhões de corações!</p>
         </div>
         <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
         <button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
@@ -75,14 +77,14 @@
 
     <div class="corpo">
         <div class="noticias-home">
-        {% for noticia in noticias %}
-        <div class="noticia">
-            <a href="{{ url_for(noticia.endpoint) }}">
-                <img src="{{ url_for('static', filename=noticia.imagem) }}" alt="Imagem da notícia">
-                <p>{{ noticia.titulo }}</p>
-            </a>
-        </div>
-        {% endfor %}
+            {% for noticia in noticias %}
+            <div class="noticia">
+                <a href="{{ url_for(noticia.endpoint) }}">
+                    <img src="{{ url_for('static', filename=noticia.imagem) }}" alt="Imagem da notícia">
+                    <p>{{ noticia.titulo }}</p>
+                </a>
+            </div>
+            {% endfor %}
         </div>
         <div class="h1">
             <h1>PRÓXIMAS PARTIDAS: </h1>
@@ -111,19 +113,21 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-               <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Internacional Logo"> </a>
+                <a href="{{ url_for('home') }}"><img
+                        src="{{ url_for('static', filename='imagens/scinternacional.svg') }}" alt="Internacional Logo">
+                </a>
             </div>
-    
+
             <div class="footer-links">
                 <h3>Clube</h3>
                 <ul>
                     <li><a href="{{ url_for('elenco') }}"">Elenco</a></li>
-                    <li><a href="{{ url_for('historia') }}">História</a></li>
+                    <li><a href=" {{ url_for('historia') }}">História</a></li>
                     <li><a href="{{ url_for('titulos') }}">Títulos</a></li>
                     <li><a href="{{ url_for('noticias') }}">Notícias</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer-links">
                 <h3>Contato</h3>
                 <ul>
@@ -134,14 +138,19 @@
                     <li><a href="https://wa.me/5551999999999" target="_blank">Fale conosco no WhatsApp</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer-social">
                 <h3>Siga-nos</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img src="{{ url_for('static', filename='imagens/facebook.png') }}" alt="Facebook"></a>
-                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="{{ url_for('static', filename='imagens/twitter.png') }}" alt="Twitter"></a>
-                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img src="{{ url_for('static', filename='imagens/instagram.avif') }}" alt="Instagram"></a>
-                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img src="{{ url_for('static', filename='imagens/youtube.svg') }}" alt="YouTube"></a>
+                    <a href="https://www.facebook.com/scinternacional/?locale=pt_BR" target="_blank"><img
+                            src="{{ url_for('static', filename='imagens/facebook.png') }}" alt="Facebook"></a>
+                    <a href="https://x.com/SCInternacional?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                        target="_blank"><img src="{{ url_for('static', filename='imagens/twitter.png') }}"
+                            alt="Twitter"></a>
+                    <a href="https://www.instagram.com/scinternacional/?hl=pt" target="_blank"><img
+                            src="{{ url_for('static', filename='imagens/instagram.avif') }}" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@scinternacional" target="_blank"><img
+                            src="{{ url_for('static', filename='imagens/youtube.svg') }}" alt="YouTube"></a>
                 </div>
             </div>
         </div>
@@ -158,7 +167,7 @@
             });
         }
 
-        (function() {
+        (function () {
             const carousel = document.getElementById('heroCarousel');
             if (!carousel) return;
             const slides = carousel.querySelectorAll('.carousel-slide');
@@ -191,4 +200,5 @@
         })();
     </script>
 </body>
+
 </html>
