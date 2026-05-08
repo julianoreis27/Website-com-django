@@ -1,12 +1,15 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
     }
   ]
 }
